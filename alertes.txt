@@ -1,0 +1,13 @@
+Date : Tue Nov 06 11:16:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.10800094E-4
+Date : Wed Nov 07 11:20:00 CET 2012 // Alerte de type 2 : BpmMicro a atteint 120.0
+Date : Thu Nov 08 19:24:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.2993763E-4
+Date : Wed Nov 14 09:26:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.2291053E-4
+Date : Wed Nov 14 11:22:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.2291053E-4
+Date : Wed Nov 21 07:16:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.1574074E-4
+Date : Wed Nov 21 07:28:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.1574074E-4
+Date : Wed Nov 21 16:24:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.1574074E-4
+Date : Wed Nov 21 18:02:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.1574074E-4
+Date : Tue Dec 04 09:08:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.880642E-4
+Date : Sat Dec 15 03:02:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.9673974E-4
+Date : Sat Dec 15 13:24:00 CET 2012 // Alerte de type 2 : BpmMicroVariation a atteint 1.9673974E-4
+Date : Sat Dec 15 13:24:00 CET 2012 // Alerte de type 2 : BpmMicro a atteint 110.0
