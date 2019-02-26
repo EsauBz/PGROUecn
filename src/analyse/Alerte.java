@@ -74,7 +74,7 @@ public class Alerte {
     */
     public void transmettre() throws IOException{
         try (BufferedWriter fichier = new BufferedWriter(new FileWriter("alertes.txt",true))) {
-        fichier.append("Date : "+new Date(this.date * 1000) +" // Alerte de type "+this.gravite+" : "+ this.type+" a atteint "+ this.valeur);
+        fichier.append(" Date : " + new Date(this.date * 1000) + " Alerte dans la mesure de " + this.type + " [Varition: "+ this.valeur + "]");
         fichier.newLine();
         }
         
