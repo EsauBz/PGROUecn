@@ -31,11 +31,12 @@ public class Analyse {
         */
         Parametres p = new Parametres();
         BpmMicro m = new BpmMicro("Données","BPDataList");
+        Poids po = new Poids("DonnéesPoids","WeightDataList");
         for (int i = 0; i < 500; i++) {
             m.miseAjour(p);
+            po.miseAjour(p);
         }
-             
-       
+
     }
     
 }

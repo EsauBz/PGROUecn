@@ -7,7 +7,7 @@ package analyse;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import lectureJson.Lecture;
+//import lectureJson.Lecture;
 import org.json.simple.parser.ParseException;
 
 /**
