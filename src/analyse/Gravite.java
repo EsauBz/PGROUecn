@@ -52,8 +52,14 @@ public class Gravite {
             }
         }
     }
-    public float frequence(long dateDeb, long dateFin){
-        return 0;
+    public int frequence(long dateDeb, long dateFin, String type){
+        int c=0;
+        for (int i=0; i<alertes.size(); i++){
+            if (alertes.get(i).getDate()<dateFin && alertes.get(i).getDate()>dateDeb && alertes.get(i).getType().equals(type)){
+                c=c+1;
+            }
+        }
+        return c;
     }
     
 }
