@@ -19,20 +19,20 @@ public class Alerte {
     private String type;
     private float valeur;
     private long date;
-    private int gravite;
+   // private int gravite;
 
-    public Alerte(String type, float valeur, long date, int gravite) {
+    public Alerte(String type, float valeur, long date) {
         this.type = type;
         this.valeur = valeur;
         this.date = date;
-        this.gravite = gravite;
+     //   this.gravite = gravite;
     }
     
     public Alerte (){
         this.type = "";
         this.valeur = 0;
         this.date =0;
-        this.gravite = 0;
+        //this.gravite = 0;
     }
 
     public String getType() {
@@ -59,13 +59,13 @@ public class Alerte {
         this.date = date;
     }
 
-    public int getGravite() {
+   /* public int getGravite() {
         return gravite;
     }
 
     public void setGravite(int gravite) {
         this.gravite = gravite;
-    }
+    }*/
     
     
     /*
