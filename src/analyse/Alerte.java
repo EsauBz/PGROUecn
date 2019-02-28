@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package analyse;
-//test Elise 2
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -73,10 +72,19 @@ public class Alerte {
     Si il existe, l'alerte est écrite à la suite dans le fichier.
     */
     public void transmettre() throws IOException{
-        try (BufferedWriter fichier = new BufferedWriter(new FileWriter("alertes.txt",true))) {
-        fichier.append(" Date : " + new Date(this.date * 1000) + " Alerte dans la mesure de " + this.type + " [Varition: "+ this.valeur + "]");
+        try (BufferedWriter fichier = new BufferedWriter(new FileWriter("dépassements.txt",true))) {
+        fichier.append(" Date : " + new Date(this.date * 1000) + " dépassements dans la mesure: " + this.type + " [Varition: "+ this.valeur + "]");
         fichier.newLine();
         }
         
     }
+    
+    public void transmissionAlerte(String typeA, Date dateA) throws IOException{
+        try (BufferedWriter fichier = new BufferedWriter(new FileWriter("Alertes.txt",true))) {
+        fichier.append(" Date : " + dateA + " Alerte de type: " + typeA);
+        fichier.newLine();
+        }
+        
+    }
+    
 }
