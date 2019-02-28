@@ -52,10 +52,11 @@ public class Gravite {
             }
         }
     }
-    public int frequence(long dateDeb, long dateFin, String type){
+    public int frequence(Date dateDeb, Date dateFin, String type){
         int c=0;
         for (int i=0; i<alertes.size(); i++){
-            if (alertes.get(i).getDate()<dateFin && alertes.get(i).getDate()>dateDeb && alertes.get(i).getType().equals(type)){
+            Date dateA=new Date(alertes.get(i).getDate()*1000);
+            if (dateA.after(dateDeb) && dateA.before(dateFin) && alertes.get(i).getType().equals(type)){
                 c=c+1;
             }
         }

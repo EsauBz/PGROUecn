@@ -31,7 +31,7 @@ public class BpmMacro extends MesureMoyenneJournee {
     //Si cette valeur est au dessus de la moyenne de la journée +5, on crée une alerte
     public void analyse(Parametres p) {
         if ((p.getBpmHautJour() < this.getMoyenneJournee() || p.getBpmBasJour() > this.getMoyenneJournee())&&this.getMoyenneJournee()!=0) {
-            Alerte alerte = new Alerte("BpmMacro", this.getMoyenneJournee(), this.getDebut(), 1);
+            Alerte alerte = new Alerte("BpmMacro", this.getMoyenneJournee(), this.getDebut(),1);
             try {
                 alerte.transmettre();
             } catch (IOException ex) {
