@@ -78,7 +78,7 @@ public class Alerte {
         }
         
         try (BufferedWriter fichierSystem = new BufferedWriter(new FileWriter("alerteSystem.txt",true))) {
-            fichierSystem.append(this.date + this.type + this.valeur);
+            fichierSystem.append(this.date +" "+ this.type +" " + this.valeur);
             fichierSystem.newLine();
         }
         
