@@ -77,6 +77,11 @@ public class Alerte {
         fichier.newLine();
         }
         
+        try (BufferedWriter fichierSystem = new BufferedWriter(new FileWriter("alerteSystem.txt",true))) {
+            fichierSystem.append(this.date + this.type + this.valeur);
+            fichierSystem.newLine();
+        }
+        
     }
     
     public void transmissionAlerte(String typeA, Date dateA) throws IOException{
