@@ -54,13 +54,14 @@ public class Gravite {
     }
     public int frequence(Date dateDeb, Date dateFin, String type){
         int c=0;
+        int duree=(int) ((dateFin.getTime()-dateDeb.getTime())/86400000);  //getTime donne des ms, on veut un résultat en jour
         for (int i=0; i<alertes.size(); i++){
             Date dateA=new Date(alertes.get(i).getDate()*1000);
             if (dateA.after(dateDeb) && dateA.before(dateFin) && alertes.get(i).getType().equals(type)){
                 c=c+1;
             }
         }
-        return c;
+        return (c/duree); //moyenne du nb d'alertes par jour sur un intervalle donné
     }
     
 }
