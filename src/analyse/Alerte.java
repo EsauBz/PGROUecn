@@ -15,9 +15,9 @@ import java.util.Date;
  * définit les paramètres généraux d'une alerte ainsi que sont écriture dans un fichier texte
  */
 public class Alerte {
-    private String type;
-    private float valeur;
-    private long date;
+    protected String type;
+    protected float valeur;
+    protected long date;
    // private int gravite;
 
     public Alerte(String type, float valeur, long date) {
