@@ -69,11 +69,24 @@ public class Gravite {
         int nbSympt = 0;
         while (i<alertes.size()){
             if (jour==alertes.get(i).date){
-                nbSympt ++;
+                nbSympt ++; 
             }
             i++;
         }
         return nbSympt;
+    }
+    
+    public int niveauAlerte(long date){
+        if (symptomes("nomFichier", date)==1){
+            return 1;
+        }
+        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieur, "nomFichier")>?)){
+            return 2;
+        }
+        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieur, "nomFichier")>?)){
+            return 3;
+        }
+        return 0;
     }
     
 }
