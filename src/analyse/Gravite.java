@@ -67,23 +67,30 @@ public class Gravite {
     public int symptomes(String nomFichier, long dateDeb, long dateFin){
         int i = 0;
         int nbSympt = 0;
+        ArrayList<String> types = new ArrayList();
         while (i<alertes.size()){
-            if (alertes.get(i).date>=dateDeb){
-                nbSympt ++; 
+            if ((alertes.get(i).date>=dateDeb)&&(alertes.get(i).date<=dateFin)){
+                if (!types.contains(alertes.get(i).type)){
+                    nbSympt++;
+                    types.add(alertes.get(i).type);
+                } 
             }
             i++;
         }
         return nbSympt;
     }
     
-    public int niveauAlerte(long date){
-        if (symptomes("nomFichier", date)==1){
+    public int niveauAlerte(long dateD, long dateF){
+        Date dateA=new Date(dateD);
+        Date dateB=new Date(dateF);
+        //0.4 : 3 alertes sur une semaine
+        if ((symptomes("nomFichier", dateD, dateF)==1)&&(frequence(dateA, dateB, "nomFichier")<0.4)){
             return 1;
         }
-        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieure, "nomFichier")>?)){
+        if ((symptomes("nomFichier", dateD, dateF)>1)||(frequence(dateA, dateB, "nomFichier")>0.4)){
             return 2;
         }
-        if ((symptomes("nomFichier", date)>1)&&(frequence(date, dateAnterieure, "nomFichier")>?)){
+        if ((symptomes("nomFichier", dateD, dateF)>1)&&(frequence(dateA, dateB, "nomFichier")>0.4)){
             return 3;
         }
         return 0;
