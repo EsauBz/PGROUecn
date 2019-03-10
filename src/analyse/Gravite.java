@@ -80,10 +80,10 @@ public class Gravite {
         if (symptomes("nomFichier", date)==1){
             return 1;
         }
-        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieur, "nomFichier")>?)){
+        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieure, "nomFichier")>?)){
             return 2;
         }
-        if ((symptomes("nomFichier", date)>1)||(frequence(date, dateAnterieur, "nomFichier")>?)){
+        if ((symptomes("nomFichier", date)>1)&&(frequence(date, dateAnterieure, "nomFichier")>?)){
             return 3;
         }
         return 0;
