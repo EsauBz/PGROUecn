@@ -64,11 +64,11 @@ public class Gravite {
         return (c/duree); //moyenne du nb d'alertes par jour sur un intervalle donné
     }
     
-    public int symptomes(String nomFichier, long jour){
+    public int symptomes(String nomFichier, long dateDeb, long dateFin){
         int i = 0;
         int nbSympt = 0;
         while (i<alertes.size()){
-            if (jour==alertes.get(i).date){
+            if (alertes.get(i).date>=dateDeb){
                 nbSympt ++; 
             }
             i++;
