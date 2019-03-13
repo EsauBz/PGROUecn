@@ -7,6 +7,7 @@ package analyse;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.simple.parser.ParseException;
@@ -31,9 +32,10 @@ public class Poids extends MesureVariation {
     @Override
     public void analyse(Parametres p){
         if (this.variation()>p.getVariationPoids()){
-            Alerte alerte = new Alerte("PoidsVariation", this.variation(), this.getDate(), 1);
+            Alerte alerte = new Alerte("PoidsVariation", this.variation(), this.getDate());
             try {
                 alerte.transmettre();
+                alerte.transmissionAlerte("PoidsVariation", this.getDate());
             } catch (IOException ex) {
                 Logger.getLogger(Poids.class.getName()).log(Level.SEVERE, null, ex);
             }

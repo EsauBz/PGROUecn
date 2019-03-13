@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
  * @author antoi
  */
 public abstract class MesureVariation extends Mesure {
-    //pour les variations, on staock les dernières valeurs collectées
+    //pour les variations, on stocke les dernières valeurs collectées
     private float val1;
     private long date1;
     private float val2;
