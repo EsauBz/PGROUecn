@@ -26,7 +26,7 @@ public class TensionMicro extends Mesure{
     @Override
     public void analyse(Parametres p){
         if (this.getValeur()>p.getTensionHaut()||this.getValeur()<p.getTensionBas()){
-            Alerte alerte = new Alerte("TensionMacro", this.getValeur(), this.getDate(), 2);
+             Alerte alerte = new Alerte("TensionMacro", this.getValeur(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

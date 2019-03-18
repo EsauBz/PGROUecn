@@ -25,7 +25,7 @@ public class TemperatureMacro extends MesureMoyenneJournee{
     @Override
     public void analyse(Parametres p){
         if (p.getTemperatureHautJour()<this.getMoyenneJournee()||p.getTemperatureBasJour()>this.getMoyenneJournee()||this.getMoyenneJournee()!=0){
-            Alerte alerte = new Alerte("TemperatureMacro", this.getMoyenneJournee(), this.getDebut(), 2);
+             Alerte alerte = new Alerte("TemperatureMacro", this.getMoyenneJournee(), this.getDebut());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

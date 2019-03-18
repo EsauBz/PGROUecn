@@ -7,6 +7,7 @@ package analyse;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import org.json.simple.parser.ParseException;
 
 
@@ -29,13 +30,27 @@ public class Analyse {
         Créer une mesure du type que l'on souhaite analyser. Ne pas oublier de vérifier si la clef correspond à celle dans le fichier
         Pour utiliser le programme, il suffit de lancer la fonction miseAjour(Parametres p)
         */
+        
+        System.out.println(new Date(1352196960 * 1000));
+        System.out.println(new Date(1956996960  * 1000));      
+        
+        
         Parametres p = new Parametres();
         BpmMicro m = new BpmMicro("Données","BPDataList");
         Poids po = new Poids("DonnéesPoids","WeightDataList");
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 1000; i++) {
             m.miseAjour(p);
             po.miseAjour(p);
         }
+        
+        Alerte a = new Alerte();
+        String chaineA="";
+        Gravite gravite = new Gravite("alerteSystem.txt");
+        int am = gravite.niveauAlerte(gravite.getAlertes().get(0).getDate(),gravite.getAlertes().get(gravite.getAlertes().size()-1).getDate(),chaineA);
+        chaineA=chaineA+am;
+        long d = System.currentTimeMillis();
+        a.transmissionAlerte(chaineA, d);
+        
 
     }
     

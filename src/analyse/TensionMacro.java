@@ -27,7 +27,7 @@ public class TensionMacro extends MesureMoyenneJournee{
     //compare la moyenne de la journée à la valeur définie dans les paramètres
     public void analyse(Parametres p){
         if (p.getTensionHautJour()<this.getMoyenneJournee()||p.getTensionBasJour()>this.getMoyenneJournee()||this.getMoyenneJournee()!=0){
-            Alerte alerte = new Alerte("TensionMacro", this.getMoyenneJournee(), this.getDebut(), 2);
+            Alerte alerte = new Alerte("TensionMacro", this.getMoyenneJournee(), this.getDebut());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

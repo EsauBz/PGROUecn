@@ -26,7 +26,7 @@ public class TemperatureMicro extends MesureVariation{
     @Override
     public void analyse(Parametres p){
         if (this.variation()>p.getVariationTemperature()){
-            Alerte alerte = new Alerte("TemperatureMicroVariation", this.variation(), this.getDate(), 1);
+             Alerte alerte = new Alerte("TemperatureMicroVariation", this.variation(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {
@@ -34,7 +34,7 @@ public class TemperatureMicro extends MesureVariation{
             }
         }
         if (this.getValeur()>p.getTemperatureHaut()||this.getValeur()<p.getTemperatureBas()){
-            Alerte alerte = new Alerte("TemperatureMicro", this.getValeur(), this.getDate(), 2);
+            Alerte alerte = new Alerte("TemperatureMicro", this.getValeur(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

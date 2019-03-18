@@ -31,7 +31,7 @@ public class Glycemie extends MesureVariation{
     @Override
     public void analyse(Parametres p) {
         if (this.variation()>p.getVariationGlycemie()){
-            Alerte alerte = new Alerte("GlycemieVariation", this.variation(), this.getDate(), 2);
+            Alerte alerte = new Alerte("GlycemieVariation", this.variation(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {
@@ -39,7 +39,7 @@ public class Glycemie extends MesureVariation{
             }
         }
         if (this.getValeur()>p.getGlycemieHaut()||this.getValeur()<p.getGlycemieBas()){
-            Alerte alerte = new Alerte("Glycemie", this.getValeur(), this.getDate(), 2);
+            Alerte alerte = new Alerte("Glycemie", this.getValeur(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

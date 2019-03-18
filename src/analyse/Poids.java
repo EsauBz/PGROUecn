@@ -34,8 +34,7 @@ public class Poids extends MesureVariation {
         if (this.variation()>p.getVariationPoids()){
             Alerte alerte = new Alerte("PoidsVariation", this.variation(), this.getDate());
             try {
-                alerte.transmettre();
-                alerte.transmissionAlerte("PoidsVariation", this.getDate());
+                alerte.transmettre();                
             } catch (IOException ex) {
                 Logger.getLogger(Poids.class.getName()).log(Level.SEVERE, null, ex);
             }

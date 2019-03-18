@@ -31,7 +31,7 @@ public class BpmMicro extends MesureVariation{
     @Override
     public void analyse(Parametres p){
         if (this.variation()>p.getVariationBpm()){
-            Alerte alerte = new Alerte("BpmMicroVariation", this.variation(), this.getDate(), 2);
+            Alerte alerte = new Alerte("BpmMicroVariation", this.variation(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {
@@ -39,7 +39,7 @@ public class BpmMicro extends MesureVariation{
             }
         }
         if (this.getValeur()>p.getBpmHaut()||this.getValeur()<p.getBpmBas()){
-            Alerte alerte = new Alerte("BpmMicro", this.getValeur(), this.getDate(), 2);
+            Alerte alerte = new Alerte("BpmMicro", this.getValeur(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

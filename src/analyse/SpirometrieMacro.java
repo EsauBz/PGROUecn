@@ -25,7 +25,7 @@ public class SpirometrieMacro extends MesureVariation{
     @Override
     public void analyse(Parametres p){
         if (this.variation()>p.getVariationSpiro()){
-            Alerte alerte = new Alerte("SpirometrieMacroVariation", this.variation(), this.getDate(), 1);
+            Alerte alerte = new Alerte("SpirometrieMacroVariation", this.variation(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {
@@ -33,7 +33,7 @@ public class SpirometrieMacro extends MesureVariation{
             }
         }
         if (this.getValeur()>p.getSpirometrieHaut()||this.getValeur()<p.getSpirometrieBas()){
-            Alerte alerte = new Alerte("SpirometrieMacro", this.getValeur(), this.getDate(), 2);
+            Alerte alerte = new Alerte("SpirometrieMacro", this.getValeur(), this.getDate());
             try {
                 alerte.transmettre();
             } catch (IOException ex) {

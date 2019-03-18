@@ -20,7 +20,7 @@ public class Alerte {
     protected long date;
    // private int gravite;
 
-    public Alerte(String type, float valeur, long date) {
+    public  Alerte(String type, float valeur, long date) {
         this.type = type;
         this.valeur = valeur;
         this.date = date;
@@ -84,9 +84,9 @@ public class Alerte {
         
     }
     
-    public void transmissionAlerte(String typeA, Date dateA) throws IOException{
+    public void transmissionAlerte(String typeA, long dateA) throws IOException{
         try (BufferedWriter fichier = new BufferedWriter(new FileWriter("Alertes.txt",true))) {
-        fichier.append(" Date : " + dateA + " Alerte de type: " + typeA);
+        fichier.append(" Date : " + new Date(dateA) + " Alerte de type: " + typeA);
         fichier.newLine();
         }
         
