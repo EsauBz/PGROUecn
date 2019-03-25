@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -24,6 +24,11 @@ public class Gravite {
     private ArrayList<Alerte> alertes;
     
     //il faut modifier transmettre pour pas avoir de texte superflu
+
+    /**
+     * Lecture d'un fichier dans lequel sont stockées des alertes
+     * @param nomFichier
+     */
     public Gravite(String nomFichier){
         BufferedReader fichier = null;
         try {
@@ -56,10 +61,21 @@ public class Gravite {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Alerte> getAlertes() {
         return alertes;
     }
     
+    /**
+     * Calcul de la fréquence d'un certain type d'alertes sur une période donnée
+     * @param dateDeb
+     * @param dateFin
+     * @param type
+     * @return
+     */
     public int frequence(Date dateDeb, Date dateFin, String type){
         int c=0;
         int duree=(int) ((dateFin.getTime()-dateDeb.getTime())/86400000);  //getTime donne des ms, on veut un résultat en jour
@@ -72,6 +88,12 @@ public class Gravite {
         return (c/duree); //moyenne du nb d'alertes par jour sur un intervalle donné
     }
     
+    /**
+     * Calcul du nb d'alertes de types différents sur une période donnée
+     * @param dateDeb
+     * @param dateFin
+     * @return
+     */
     public int symptomes(long dateDeb, long dateFin){
         int i = 0;
         int nbSympt = 0;
@@ -88,6 +110,13 @@ public class Gravite {
         return nbSympt;
     }
     
+    /**
+     * A partir de la fréquence d'un type d'alerte et du nb de types d'alerte différents, évaluation du niveau d'alerte
+     * @param dateD
+     * @param dateF
+     * @param typeAlerte
+     * @return
+     */
     public int niveauAlerte(long dateD, long dateF, String typeAlerte){
         Date dateA=new Date(dateD);
         Date dateB=new Date(dateF);

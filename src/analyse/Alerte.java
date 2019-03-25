@@ -15,18 +15,38 @@ import java.util.Date;
  * définit les paramètres généraux d'une alerte ainsi que sont écriture dans un fichier texte
  */
 public class Alerte {
+
+    /**
+     *
+     */
     protected String type;
+
+    /**
+     *
+     */
     protected float valeur;
+
+    /**
+     *
+     */
     protected long date;
    // private int gravite;
 
+    /**
+     *
+     * @param type
+     * @param valeur
+     * @param date
+     */
     public  Alerte(String type, float valeur, long date) {
         this.type = type;
         this.valeur = valeur;
         this.date = date;
-     //   this.gravite = gravite;
     }
     
+    /**
+     *
+     */
     public Alerte (){
         this.type = "";
         this.valeur = 0;
@@ -34,26 +54,50 @@ public class Alerte {
         //this.gravite = 0;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setType(String type) {
         this.type = type;
     }
 
+    /**
+     *
+     * @return
+     */
     public float getValeur() {
         return valeur;
     }
 
+    /**
+     *
+     * @param valeur
+     */
     public void setValeur(float valeur) {
         this.valeur = valeur;
     }
 
+    /**
+     *
+     * @return
+     */
     public long getDate() {
         return date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(long date) {
         this.date = date;
     }
@@ -71,6 +115,12 @@ public class Alerte {
     écrit l'alerte dans un fichier nommé alertes.txt. si le fichier n'existe pas, il est créé. 
     Si il existe, l'alerte est écrite à la suite dans le fichier.
     */
+
+    /**
+     * Ecriture dans un fichier toutes les alertes, au fur et à mesure
+     * @throws IOException
+     */
+
     public void transmettre() throws IOException{
         try (BufferedWriter fichier = new BufferedWriter(new FileWriter("dépassements.txt",true))) {
         fichier.append(" Date : " + new Date(this.date * 1000) + " dépassements dans la mesure: " + this.type + " [Varition: "+ this.valeur + "]");
@@ -84,6 +134,12 @@ public class Alerte {
         
     }
     
+    /**
+     *
+     * @param typeA
+     * @param dateA
+     * @throws IOException
+     */
     public void transmissionAlerte(String typeA, long dateA) throws IOException{
         try (BufferedWriter fichier = new BufferedWriter(new FileWriter("Alertes.txt",true))) {
         fichier.append(" Date : " + new Date(dateA) + " Alerte de type: " + typeA);
